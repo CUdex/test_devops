@@ -11,10 +11,8 @@ jobs:
 
       - name: check Even or Odd
         run: |
-          count=`cat * | sed '/^$/d' | wc -l`
+          count=`echo "$(cat *)" | sed '/^$/d' | wc -l`
           num=$(($count % 2))
           echo 총 라인 수 : ${count}
           if [ ${num} -eq "1" ]; then echo even fail; exit 1; fi
           echo even ok
-      - name: see file
-        run: cat * | sed '/^$/d'
