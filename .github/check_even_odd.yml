@@ -1,16 +1,12 @@
 name: check even or odd
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      #- uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Run a one-line script
         run: echo 홀수!
