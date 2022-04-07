@@ -12,7 +12,6 @@ jobs:
       - name: check lines
         run: |
           count=`cat README.md | wc -l`
-          num=`expr $count % 2`
           echo 결과 값 : ${count}
-          if [ ${num} -eq "1" ]; then echo good; fi
+          if [ ${count} -eq "1" ]; then echo good; fi
           echo OK
