@@ -12,5 +12,8 @@ jobs:
       - name: check lines
         run: |
           count=`cat READMD.md | wc -l`
+          num=`$count % 2`
           echo 결과 값 : ${count}
-          if [ ${check} -eq 1 ]; then echo good; fi
+          if [ ${num} -eq "1" ]; then echo good; fi
+          echo OK
+        shell: bash
