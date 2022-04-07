@@ -11,5 +11,8 @@ jobs:
       - name: check lines
         run: cat READMD.md | wc -l
 
+      - name: check dir
+        run: ls -al
+
       - name: start check
-        run: check_even_odd.sh
+        run: bash check_even_odd.sh
