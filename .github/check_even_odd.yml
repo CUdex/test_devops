@@ -1,0 +1,20 @@
+name: check even or odd
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        run: echo 홀수!
+
+      - name: Run a multi-line script
+        run: echo 짝수!
+          echo Add other actions to build,
