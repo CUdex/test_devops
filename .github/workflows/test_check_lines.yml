@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: check lines
+      - name: check Even or Odd
         run: |
           count=`cat * | wc -l`
           num=$(($count % 2))
