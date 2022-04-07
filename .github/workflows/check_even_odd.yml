@@ -8,9 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run a one-line script
-        run: echo 홀수!
+      - name: check lines
+        run: cat READMD.md | wc -l
 
-      - name: Run a multi-line script
-        run: echo 짝수!
-          echo Add other actions to build,
+      - name: start check
+        run: check_even_odd.sh
