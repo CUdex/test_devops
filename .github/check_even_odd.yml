@@ -1,6 +1,6 @@
 name: check even or odd
 
-on: [push]
+on: push
 
 jobs:
   build:
