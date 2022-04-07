@@ -12,4 +12,4 @@ jobs:
       - name: check lines
         run: |
           count=`cat READMD.md | wc -l`
-          check_num=`expr $count % 2`
+          echo $count
