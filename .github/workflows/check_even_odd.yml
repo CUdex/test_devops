@@ -16,4 +16,4 @@ jobs:
           echo 결과 값 : ${count}
           if [ ${num} -eq "1" ]; then echo good; fi
           echo OK
-        shell: bash
+        shell: /bin/bash
