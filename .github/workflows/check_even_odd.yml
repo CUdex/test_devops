@@ -13,4 +13,4 @@ jobs:
           count=`cat READMD.md | wc -l`
           check=`expr $count % 2`
           echo "결과 값 : ${count}"
-          if [ check -eq 1 ]; then echo good; fi
+          if [ $check -eq 1 ]; then echo good; fi
