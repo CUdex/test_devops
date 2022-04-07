@@ -5,11 +5,13 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
       - uses: actions/checkout@v3
 
       - name: check lines
         run: |
           count=`cat READMD.md | wc -l`
-          echo $count
+          check=`expr ${count} % 2`
+          echo 결과 값 : ${count}
+          if [ ${check} -eq 1 ]; then echo good; fi
