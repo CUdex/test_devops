@@ -9,7 +9,7 @@ resource "aws_instance" "test" {
   associate_public_ip_address = true
 
 #security 그룹 할당
-  security_groups = [ aws_security_group.test_security_group.id ]
+  security_groups = [ "${aws_security_group.test_security_group.id}" ]
 #key pair 할당
   key_name = data.aws_key_pair.my_key.id
 
