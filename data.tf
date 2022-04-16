@@ -1,3 +1,3 @@
 data "aws_key_pair" "my_key" {
-  name = "RYU_KEY"
+  key_name = "RYU_KEY"
 }
