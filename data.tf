@@ -2,7 +2,7 @@ data "aws_key_pair" "my_key" {
   key_name = "RYU_KEY"
 }
 
-data "aws_ami" "ubuntu" {
+data "aws_ami_ids" "ubuntu" {
   owners = ["099720109477"]
 
   filter {
