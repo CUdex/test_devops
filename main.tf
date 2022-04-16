@@ -28,7 +28,7 @@ resource "aws_instance" "test" {
 
   count         = 1
 
-  ami           = "ami-02de72c5dc79358c9"
+  ami           = "ami-0454bb2fefc7de534"
   instance_type = "t3.micro"
 #public ip와 연결
   associate_public_ip_address = true
