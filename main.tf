@@ -1,8 +1,18 @@
+locals {
+  tags = {
+      Name = "RYU_DevOps"
+      owner = "RYUCU"
+  }
+}
+
 provider "aws" { 
     region = "ap-northeast-2"
 }
 
 resource "aws_instance" "test" {
+
+  count         = 1
+
   ami           = "ami-02de72c5dc79358c9"
   instance_type = "t3.micro"
 #public ip와 연결
@@ -10,14 +20,12 @@ resource "aws_instance" "test" {
 
 #security 그룹 할당
   #security_groups = [ "${aws_security_group.test_security_group.id}" ]
-  vpc_security_group_ids = [ "${aws_security_group.test_security_group.id}" ]
+  vpc_security_group_ids = [ aws_security_group.test_security_group.id ]
 #key pair 할당
-  key_name = "${data.aws_key_pair.my_key.key_name}"
+  key_name = data.aws_key_pair.my_key.key_name
 
 #instance 이름
-  tags = {
-    Name = "RYU_TEST_INSTANCE"
-  }
+  tags = locals.tags
 }
 
 #security group 생성
