@@ -12,7 +12,7 @@ resource "aws_instance" "test" {
   #security_groups = [ "${aws_security_group.test_security_group.id}" ]
   vpc_security_group_ids = [ "${aws_security_group.test_security_group.id}" ]
 #key pair 할당
-  key_name = data.aws_key_pair.my_key.id
+  key_name = "${data.aws_key_pair.my_key.key_name}"
 
 #instance 이름
   tags = {
