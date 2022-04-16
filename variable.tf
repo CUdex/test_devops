@@ -9,7 +9,7 @@
 
 variable "tags_map" {
   type = map
-  tags = {
+  default = {
       Name = "RYU_DevOps"
       owner = "RYUCU"
   }
