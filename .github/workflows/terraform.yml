@@ -52,7 +52,7 @@ jobs:
       continue-on-error: true
 
     - name: Update push event
-      uses: actions/github-script@5.1.0
+      uses: actions/github-script@v6
       if: github.event_name == 'push'
       env:
         PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
