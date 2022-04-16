@@ -37,7 +37,7 @@ resource "aws_instance" "test" {
 #key pair 할당
   key_name = data.aws_key_pair.my_key.key_name
 
-  subnet_id = aws_subnet.main.id
+  #subnet_id = aws_subnet.main.id
 
 #instance 이름
   tags = var.tags_map
