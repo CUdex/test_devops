@@ -37,8 +37,6 @@ resource "aws_instance" "test" {
 #key pair 할당
   key_name = data.aws_key_pair.my_key.key_name
 
-  vpc_id = aws_vpc.main.id
-
   subnet_id = aws_subnet.main.id
 
 #instance 이름
