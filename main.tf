@@ -2,25 +2,6 @@ provider "aws" {
     region = "ap-northeast-2"
 }
 
-resource "aws_instance" "test" {
-
-  count         = 1
-
-  ami           = "ami-02de72c5dc79358c9"
-  instance_type = "t3.micro"
-#public ip와 연결
-  associate_public_ip_address = true
-
-#security 그룹 할당
-  #security_groups = [ "${aws_security_group.test_security_group.id}" ]
-  vpc_security_group_ids = [ aws_security_group.test_security_group.id ]
-#key pair 할당
-  key_name = data.aws_key_pair.my_key.key_name
-
-#instance 이름
-  tags = var.tags_map
-}
-
 #security group 생성
 resource "aws_security_group" "test_security_group" {
 
@@ -41,4 +22,23 @@ resource "aws_security_group" "test_security_group" {
   tags = {
     Name = "test_ssh"
   }
+}
+
+resource "aws_instance" "test" {
+
+  count         = 1
+
+  ami           = "ami-02de72c5dc79358c9"
+  instance_type = "t3.micro"
+#public ip와 연결
+  associate_public_ip_address = true
+
+#security 그룹 할당
+  #security_groups = [ "${aws_security_group.test_security_group.id}" ]
+  vpc_security_group_ids = [ aws_security_group.test_security_group.id ]
+#key pair 할당
+  key_name = data.aws_key_pair.my_key.key_name
+
+#instance 이름
+  tags = var.tags_map
 }
