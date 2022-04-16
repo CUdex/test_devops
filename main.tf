@@ -20,7 +20,7 @@ resource "aws_security_group" "test_security_group" {
   }
 
   tags = {
-    Name = "test_ssh"
+    Name = "perm_ssh"
   }
 }
 

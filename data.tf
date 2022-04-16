@@ -3,7 +3,7 @@ data "aws_key_pair" "my_key" {
 }
 
 data "aws_ami" "ubuntu" {
-  owners = ["amazon"]
+  owners = ["099720109477"]
   
   most_recent = true
 
