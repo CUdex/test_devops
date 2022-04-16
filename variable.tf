@@ -7,7 +7,10 @@
 #   default = ["us-west-1a"]
 # }
 
-# variable "ami_id_maps" {
-#   type = map
-#   default = {}
-# }
+variable "tags_map" {
+  type = map
+  tags = {
+      Name = "RYU_DevOps"
+      owner = "RYUCU"
+  }
+}

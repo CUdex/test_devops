@@ -1,10 +1,3 @@
-locals {
-  tags = {
-      Name = "RYU_DevOps"
-      owner = "RYUCU"
-  }
-}
-
 provider "aws" { 
     region = "ap-northeast-2"
 }
@@ -25,7 +18,7 @@ resource "aws_instance" "test" {
   key_name = data.aws_key_pair.my_key.key_name
 
 #instance 이름
-  tags = locals.tags
+  tags = var.tags_map
 }
 
 #security group 생성
