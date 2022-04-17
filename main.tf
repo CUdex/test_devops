@@ -1,5 +1,39 @@
 provider "aws" { 
-    region = "ap-northeast-2"
+    region = "arp-notheast-2"
+}
+
+# # remote ftstate 설정
+# resource "aws_s3_bucket" "terraform_state" {
+#     bucket = "DevOps_bucket"
+
+#     versioning {
+#         enabled = true
+#     }
+
+#     lifecycle {
+#         prevent_destroy = true
+#     }
+# }
+
+# resource "aws_dynamodb_table" "terraform_lock" {
+# 	name = "RyuDevOps-up-and-running-lock"
+#     hash_key = "LockID"
+#     read_capacity = 2
+#     write_capacity = 2
+    
+#     attribute {
+#     	name = "LockID"
+#         type = "S"
+#     }
+# }
+
+terraform {
+  backend "s3" {
+    bucket = "DevOps_bucket"
+    key    = "DevOps_key"
+    region = "arp-notheast-2"
+    encrypt = true
+  }
 }
 
 #security group 생성
@@ -61,3 +95,9 @@ resource "aws_subnet" "main" {
     Name = "RYU_SUBNET"
   }
 }
+
+
+# resource "aws_s3_bucket" "logs" {
+#   bucket = "kr.ne.outsider.logs"
+#   acl    = "log-delivery-write"
+# }
