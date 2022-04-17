@@ -1,10 +1,10 @@
 data "terraform_remote_state" "DevOps" {
   backend = "s3"
 
-  config {
-    bucket = "DevOps_bucket"
-    key    = "DevOps_key"
-    region = "arp-notheast-2"
+  config = {
+    bucket = "ryudevopsbucket"
+    key    = "DevOps_key.tfstate"
+    region = "ap-northeast-2"
   }
 }
 

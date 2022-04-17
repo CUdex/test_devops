@@ -1,10 +1,10 @@
 provider "aws" { 
-    region = "arp-notheast-2"
+    region = "ap-northeast-2"
 }
 
-# # remote ftstate 설정
+# remote ftstate 설정
 # resource "aws_s3_bucket" "terraform_state" {
-#     bucket = "DevOps_bucket"
+#     bucket = "devopsbucket"
 
 #     versioning {
 #         enabled = true
@@ -29,9 +29,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "DevOps_bucket"
-    key    = "DevOps_key"
-    region = "arp-notheast-2"
+    bucket = "ryudevopsbucket"
+    key    = "DevOps_key.tfstate"
+    region = "ap-northeast-2"
     encrypt = true
   }
 }
