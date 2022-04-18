@@ -12,19 +12,19 @@ data "aws_key_pair" "my_key" {
   key_name = "RYU_KEY"
 }
 
-data "aws_ami_ids" "ubuntu" {
-  owners = ["099720109477"]
+# data "aws_ami_ids" "ubuntu" {
+#   owners = ["099720109477"]
 
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/ubuntu-*-*-amd64-server-*"]
-  }
+#   filter {
+#     name   = "name"
+#     values = ["ubuntu/images/ubuntu-*-*-amd64-server-*"]
+#   }
 
-  filter {
-      name   = "virtualization-type"
-      values = ["hvm"]
-  }
-}
+#   filter {
+#       name   = "virtualization-type"
+#       values = ["hvm"]
+#   }
+# }
 
 
 # data "aws_key_pair" "example" {
